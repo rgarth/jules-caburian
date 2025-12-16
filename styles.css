@@ -488,6 +488,12 @@ a {
     grid-column: span 2;
 }
 
+.work-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .card-image {
     position: absolute;
     inset: 0;

@@ -228,7 +228,7 @@ function initVideoModal() {
     const modal = document.getElementById('videoModal');
     const closeBtn = document.querySelector('.video-modal-close');
     const videoFrame = document.getElementById('videoFrame');
-    const videoCards = document.querySelectorAll('.work-card[data-video]');
+    const videoCards = document.querySelectorAll('.work-card[data-video], .work-card[data-video-src]');
 
     if (!modal || !closeBtn || !videoFrame) return;
 
@@ -236,8 +236,16 @@ function initVideoModal() {
     videoCards.forEach(card => {
         card.addEventListener('click', function() {
             const videoId = this.getAttribute('data-video');
+            const videoSrc = this.getAttribute('data-video-src');
+            
             if (videoId) {
+                // YouTube embed
                 videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            } else if (videoSrc) {
+                // Google Drive or other embed
+                videoFrame.src = videoSrc;
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }

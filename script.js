@@ -226,5 +226,5 @@ updateActiveNavLink();
  */
 console.log('%c👋 Hello!', 'font-size: 24px; font-weight: bold;');
 console.log('%cWelcome to Jules Caburian\'s website', 'font-size: 14px;');
-console.log('%cInterested in collaboration? Reach out at hello@julescaburian.com', 'font-size: 12px; color: #c75643;');
+console.log('%cInterested in collaboration? Reach out at linktr.ee/Balikbayancreative', 'font-size: 12px; color: #c75643;');
 

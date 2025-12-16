@@ -104,8 +104,9 @@
         </div>
         
         <div class="work-grid">
-            <article class="work-card work-card-large">
+            <article class="work-card work-card-large" data-video="5wFhvF1HlMY">
                 <div class="card-image murals"></div>
+                <div class="card-overlay"></div>
                 <div class="card-content">
                     <span class="card-category">Murals</span>
                     <h3 class="card-title">Sining Eskinita — Baguio's First Living Street</h3>
@@ -323,6 +324,16 @@
             <p class="footer-acknowledgment">We acknowledge the Traditional Custodians of the lands on which we work and live, and pay respects to Elders past and present.</p>
         </div>
     </footer>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <button class="video-modal-close" aria-label="Close video modal">&times;</button>
+            <div class="video-modal-embed">
+                <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

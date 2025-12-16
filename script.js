@@ -222,6 +222,56 @@ function updateActiveNavLink() {
 updateActiveNavLink();
 
 /**
+ * Video Modal Handler
+ */
+function initVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const closeBtn = document.querySelector('.video-modal-close');
+    const videoFrame = document.getElementById('videoFrame');
+    const videoCards = document.querySelectorAll('.work-card[data-video]');
+
+    if (!modal || !closeBtn || !videoFrame) return;
+
+    // Open modal when card is clicked
+    videoCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const videoId = this.getAttribute('data-video');
+            if (videoId) {
+                videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    // Close modal
+    function closeModal() {
+        modal.classList.remove('active');
+        videoFrame.src = '';
+        document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on background click
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+}
+
+// Initialize video modal
+initVideoModal();
+
+/**
  * Console greeting
  */
 console.log('%c👋 Hello!', 'font-size: 24px; font-weight: bold;');
